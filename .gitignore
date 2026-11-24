@@ -30,4 +30,4 @@ mlruns/
 lightning_logs/
 .cache/
 hf_cache/
-.env
+.env.idea/
