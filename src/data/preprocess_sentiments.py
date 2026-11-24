@@ -1,23 +1,3 @@
-"""
-Pré-processamento do GoEmotions PT-BR (antoniomenezes/go_emotions_ptbr):
-CSV "raw" (uma linha por anotador) -> CSV estruturados (uma linha por comentário).
-
-Passos:
-  1. junta goemotions_1_pt.csv, _2 e _3
-  2. remove anotações marcadas como "very unclear"
-  3. agrega por comentário: uma emoção conta se >= 2 anotadores a marcarem
-     (mesmo critério dos autores do GoEmotions)
-  4. mantém as 27 emoções + neutro SEPARADAS (28 classes, nomes em português)
-  5. divide em treino/validação/teste (80/10/10)
-  6. guarda duas versões com a MESMA divisão:
-       sentiments_*.csv         -> multi-etiqueta (um texto pode ter várias emoções)
-       sentiments_simples_*.csv -> só textos com uma emoção (para comparação)
-
-Uso (a partir da raiz do projeto):
-    python -m src.data.preprocess_emocoes
-    python -m src.data.preprocess_emocoes --raw data/raw/goemotions_pt --out data/processed
-"""
-
 import argparse
 import re
 import unicodedata

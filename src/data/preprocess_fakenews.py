@@ -1,15 +1,3 @@
-"""
-Pré-processamento do Fake.Br Corpus: ficheiros .txt brutos -> CSV estruturados.
-
-Lê as versões `full_texts` e/ou `size_normalized_texts` (as que existirem),
-faz uma limpeza leve (adequada a modelos BERT), divide em treino/validação/teste
-POR PARES (fake/N e true/N ficam sempre do mesmo lado) e grava em data/processed/.
-
-Uso (a partir da raiz do projeto):
-    python -m src.data.preprocess
-    python -m src.data.preprocess --raw data/raw/Fake.br-Corpus --out data/processed
-"""
-
 import argparse
 import re
 import unicodedata
